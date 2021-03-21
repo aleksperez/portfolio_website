@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
-import { useLocation } from "@reach/router";
+import {AnimatePresence} from "framer-motion";
 
 import Home from "./pages/home";
 import Media from "./pages/media";

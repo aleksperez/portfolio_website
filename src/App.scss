@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 @import "Menu.scss";
-@import "Media.scss";
 
 body,
 html {
@@ -13,51 +15,50 @@ html {
   overflow: hidden;
 }
 
+//SCROLLBAR
 body::-webkit-scrollbar {
   width: 0.25rem;
 }
-
 body::-webkit-scrollbar-track {
   background: #242424;
 }
-
 body::-webkit-scrollbar-thumb {
   background: #ffd341;
 }
 
+//HEADER
 .header-container {
+  margin:0;
   display: flex;
   flex-direction: row;
   z-index: 100;
   position: absolute;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100vw;
-  .head-logo,.menu-button{
-    text-decoration: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    margin-left: 2.3rem;
-    margin-top: 1.3rem;
+  .media-logo{
+    margin-left:17rem;
   }
-  .head-logo {
-    order: 1;
-    color: #151515;
-    font-size: 40px;
-    font-weight: 600;
-    font-family: "Montserrat";
-  }
-  .menu-button {
-    order: 2;
-    background: #151515;
-    width: 1.7rem;
-    height: 1.7rem;
-    margin-top: 2rem;
-    margin-right: 3rem;
+  .design-logo{
+    margin-right:17rem;
   }
 }
+.menu-button {
+  z-index: 100;
+  position: absolute;
+  cursor: pointer;
+  margin-top:3.5px;
+  top:0;
+  right:0;
+  width: 5.3rem;
+  height: 5rem;
+  transition: 0.2s ease-in-out;
+}
+.menu-button:hover {
+  transition: 0.2s ease-in-out;
+}
 
+//HOME PAGE
 .home {
   display: flex;
   flex-direction: row;
@@ -86,7 +87,17 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+//CONTAINER 4 BOTH MEDIA+DESIGN PAGES
+.mad-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  cursor: default;
+  top: 10rem;
+}
+
 @media (max-width: 870px) {
+  //homepage
   .home {
     display: flex;
     flex-wrap: wrap;
@@ -98,11 +109,15 @@ body::-webkit-scrollbar-thumb {
       object-fit: cover;
     }
   }
+  //header
   .header-container {
-    .head-logo {
-      font-size: 19px;
-      margin-left: 1.3rem;
-      margin-top: 1.3rem;
+    .logo-container {
+
+      .head-logo {
+      }
+      .media-logo,
+      .design-logo {
+      }
     }
     .menu-button {
       width: 20px;
